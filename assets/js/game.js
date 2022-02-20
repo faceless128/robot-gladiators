@@ -9,9 +9,6 @@ var enemyNames = ["Roborto", "Amy Android", "Robo Trumble"];
 var enemyHealth = 50;
 var enemyAttack = 12;
 
-// Alert players that they are starting the round
-window.alert("Welcome to Robot Gladiators!");
-
 // Fignt function
 var fight = function(enemyName) {
     while (playerHealth > 0 && enemyHealth > 0) {
@@ -71,6 +68,12 @@ var fight = function(enemyName) {
 
 // Call fight function
 for(var i = 0; i < enemyNames.length; i++) {
+    if (playerHealth > 0) {
+        window.alert("Welcome to Robot Gladiators! Round " + (i + 1));
+    } else {
+        window.alert("You have lost your robot in battle! Game Over!");
+        bresk;
+    }
     var pickedEnemyName = enemyNames[i]
     enemyHealth = 50;
     fight(pickedEnemyName);
